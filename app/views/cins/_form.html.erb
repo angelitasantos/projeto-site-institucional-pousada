@@ -1,0 +1,32 @@
+<%= form_with(model: cin) do |form| %>
+  <% if cin.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(cin.errors.count, "error") %> prohibited this cin from being saved:</h2>
+
+      <ul>
+        <% cin.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :code %>
+    <%= form.text_field :code %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :status %>
+    <%= form.text_field :status %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
